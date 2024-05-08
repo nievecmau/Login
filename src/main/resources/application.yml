@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: Login-indigo
+  datasource:
+      url: jdbc:postgresql://3.135.105.113:5432/indigo_dev
+      username: 'ugIndigoDev'
+      password: 'q7ansv$@2*DkRSTxu!mf'
+      driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    generate-ddl: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 8079

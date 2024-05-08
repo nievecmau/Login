@@ -6,9 +6,8 @@ import indigo.login.model.ResponseLogin;
 import indigo.login.repository.ProfileDataRepository;
 import indigo.login.service.ILogin;
 import indigo.login.utils.AesUtil128;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
@@ -19,14 +18,10 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class LoginService implements ILogin {
 
     private final ProfileDataRepository data;
-
-    @Autowired
-    public LoginService(ProfileDataRepository data){
-        this.data = data;
-    }
 
     @Override
     public ResponseLogin findUser(RequestLogin request) throws InvalidAlgorithmParameterException, UnsupportedEncodingException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
