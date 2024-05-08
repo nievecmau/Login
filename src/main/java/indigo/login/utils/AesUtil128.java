@@ -1,10 +1,4 @@
-package com.dimmer.Aes128.utils;
-
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
+package indigo.login.utils;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -12,6 +6,11 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 public class AesUtil128 {
 
@@ -20,11 +19,11 @@ public class AesUtil128 {
 	    // Definir un vector inicial de 16 bytes
 	   
 	    private static final String iv = "IFSWYUXVOPAWOIRL";
-	    private static final String keys = "tFLBEGFIAFAPWCBUIELFSWTEQYXQNZVIF";
+	    private static final String keys = "IFSJHDSDJSSKIUASLOPNXAEOLGDBVXCR";
 
-	    public static String aesEncry(String content,String key) throws UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException {
+	    public static String aesEncry(String content) throws UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException {
 	        byte[] contentByte = content.getBytes(UTF8);
-	        byte[] keyByte = key.getBytes();
+	        byte[] keyByte = keys.getBytes();
 	    
 	        SecretKeySpec keySpec = new SecretKeySpec(keyByte ,AES);
 	        // Inicializa un vector inicial, si no se pasa, el vector inicial con todos los 0 se usa por defecto

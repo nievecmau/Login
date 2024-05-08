@@ -1,29 +1,20 @@
 package indigo.login.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 
-@Getter
-@Setter
+@Data
 @Entity
-@Table(name = "ProfileData")
-public class Data implements Serializable {
-	/**
-	 * 
-	 */
+@Table(name = "profile_data")
+public class ProfileData implements Serializable {
 	private static final long serialVersionUID = 2896849150443394377L;
 
 	@Id
-	private Long id;
 	private String email;
-	@Column(insertable = false, updatable = false)
 	private String phone;
-	@Column(insertable = false, updatable = false)
-	private String password;
-
+	private String password_user;
 
 
 
